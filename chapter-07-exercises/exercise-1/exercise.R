@@ -2,8 +2,10 @@
 
 # Create a vector `names` that contains your name and the names of 2 people 
 # next to you. Print the vector.
-
-
+names <- c('Mary', 'Jason', 'Jimmy')
+print(names[1])
+filter <- c(TRUE, FALSE, TRUE)
+names[filter]
 # Use the colon operator : to create a vector `n` of numbers from 10:49
 
 
@@ -37,4 +39,12 @@
 
 
 # Use the `plot()` function to plot your `wave`!
+
+
+person <- list(first_name = "Ada", job = "Programmer", salary = 77000, in_union = TRUE)
+
+person$first_name # access name tag for each element // for vector
+person[["salary"]] // for list
+// Vector: access each element using single brackets
+// List: access each element using double brackets
 
