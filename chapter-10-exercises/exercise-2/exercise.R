@@ -22,16 +22,16 @@ salaries <- data.frame(employees, salaries_2017, annual_salary_adjustments, stri
 # salary in 2018 (e.g., with the salary adjustment added in).
 salaries$salaries_2018 <- salaries$salaries_2017 + salaries$annual_salary_adjustments
 
-# Add a column to the `salaries` data frame that has a value of `TRUE` if the 
+# Add a column to the `salaries` data frame that has a value of `TRUE` if the
 # person got a raise (their salary went up)
-salaries$raised <- salaries$salaries_2018 > salaries$salaries_2017 
+salaries$raised <- salaries$salaries_2018 > salaries$salaries_2017
 
 ### Retrieve values from your data frame to answer the following questions
 ### Note that you should get the value as specific as possible (e.g., a single
 ### cell rather than the whole row!)
 
 # What was the 2018 salary of Employee 57
-salary_2018_57 <- salaries[salaries$employees == "Employee 57", "salaries_2018"]
+salary_2018_57 <- salaries[57, "salaries_2018"]
 
 # How many employees got a raise?
 nrow(salaries[salaries$raised == TRUE, ])
@@ -54,7 +54,7 @@ average_change <- mean(salaries$annual_salary_adjustments)
 # For people who did not get a raise, how much money did they lose on average?
 average_lose <- mean(salaries$annual_salary_adjustments[salaries$raised == FALSE])
 
-## Consider: do the above averages match what you expected them to be based on 
+## Consider: do the above averages match what you expected them to be based on
 ## how you generated the salaries?
 "Yes, it matches."
 
