@@ -54,7 +54,7 @@ size_gathered <- size_gathered %>%
 # This shape also facilitates the visualization of sales over time
 # (how to write this code is covered in Chapter 16)
 ggplot(size_gathered) +
-  geom_smooth(mapping = aes(x = Date, y = volume, col = size), se = F) 
+  geom_smooth(mapping = aes(x = Date, y = volume, col = size), se = F)  
 
 
 # We can also investigate sales by avocado type (conventional, organic).
