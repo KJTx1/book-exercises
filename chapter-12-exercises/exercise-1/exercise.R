@@ -61,13 +61,16 @@ ggplot(size_gathered) +
 # Create a new data frame `by_type` by grouping the `avocados` dataframe by
 # `Date` and `type`, and calculating the sum of the `Total.Volume` for that type
 # in that week (resulting in a data frame with 2 rows per week).
-
+by_type <- avocados %>% 
+  group_by(Date, type) %>% 
+  summarise(volume = sum(Total.Volume))
 
 # To make a (visual) comparison of conventional versus organic sales, you 
 # need to **spread** out the `type` column into two different columns. Create a 
 # new data frame `by_type_wide` by passing the `by_type` data frame to 
 # the `spread()` function!
-
+by_type_wide <- by_type %>% 
+  spread(key = type, value = volume)
 
 # Now you can create a scatterplot comparing conventional to organic sales!
 # (how to write this code is covered in Chapter 16)
